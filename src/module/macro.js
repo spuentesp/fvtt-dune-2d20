@@ -1,5 +1,5 @@
 import {
-  STARoll
+  dune2d20roll
 } from './roll.js';
 
 export function attributeTest(actor, usingFocus, usingDetermination,
@@ -40,7 +40,7 @@ export function attributeTest(actor, usingFocus, usingDetermination,
     parseInt(actor.data.data.attributes[selectedAttribute].value);
   const discValue = 
     parseInt(actor.data.data.disciplines[selectedDiscipline].value);
-  const staRoll = new STARoll();
+  const staRoll = new dune2d20roll();
   staRoll.performAttributeTest(numberOfDice, usingFocus, usingDetermination,
     selectedAttribute, attrValue, selectedDiscipline,
     discValue, complicationRange, actor);

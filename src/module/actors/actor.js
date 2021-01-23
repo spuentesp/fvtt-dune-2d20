@@ -2,7 +2,7 @@ import {
   STARollDialog
 } from '../apps/roll-dialog.js';
 import {
-  STARoll
+  dune2d20roll
 } from '../roll.js';
 
 export class STAActor extends Actor {
@@ -112,7 +112,7 @@ export class STASharedActorFunctions {
       const usingDetermination = rolldialog.get('usingDetermination') == null ? false : true;
       const complicationRange = parseInt(rolldialog.get('complicationRange'));
       // Once the response has been collected it then sends it to be rolled.
-      const staRoll = new STARoll();
+      const staRoll = new dune2d20roll();
       staRoll.performAttributeTest(dicePool, usingFocus, usingDetermination,
         selectedAttribute, selectedAttributeValue, selectedDiscipline,
         selectedDisciplineValue, complicationRange, speaker);
@@ -127,7 +127,7 @@ export class STASharedActorFunctions {
     if (rolldialog) {
       const dicePool = rolldialog.get('dicePoolValue');
       // Once the response has been collected it then sends it to be rolled.
-      const staRoll = new STARoll();
+      const staRoll = new dune2d20roll();
       staRoll.performChallengeRoll(dicePool, weaponName, speaker);
     }
   }
@@ -136,7 +136,7 @@ export class STASharedActorFunctions {
   async rollGenericItem(event, type, id, speaker) {
     event.preventDefault();
     const item = speaker.items.get(id);
-    const staRoll = new STARoll();
+    const staRoll = new dune2d20roll();
     // It will send it to a different method depending what item type was sent to it.
     switch (type) {
     case 'item':

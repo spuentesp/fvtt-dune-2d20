@@ -52,21 +52,7 @@ import {
 
 Hooks.once('init', function() {
   // Splash Screen
-  console.log(`Initializing Star Trek Adventures Tabletop Roleplaying Game System
-                 .
-                .:.
-               .:::.
-              .:::::.
-          ***.:::::::.***
-     *******.:::::::::.*******       
-   ********.:::::::::::.********     
-  ********.:::::::::::::.********    
-  *******.::::::'***\::::.*******    
-  ******.::::'*********\`::.******    
-   ****.:::'*************\`:.****
-     *.::'*****************\`.*
-     .:'  ***************    .
-    .`);
+  console.log(`Initializing Dune: Imperium`);
 
 
   // Create a namespace within the game global
