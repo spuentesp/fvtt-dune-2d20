@@ -3,43 +3,43 @@
         "types": ["character","house", "extendedtask"],
         "templates": {
             "common": {
+                "name":"",
                 "notes":""
             }
         },
         "character": {
             "templates": ["common"],
-            "assignment": "",
             "traits": {
                 "battle": {
-                    "label": "sta.actor.character.attribute.battle",
+                    "label": "dune.actor.character.trait.battle",
                     "statement": "",
                     "value": 4,
                     "max": 10,
                     "selected": true
                 },
                 "communicate": {
-                    "label": "sta.actor.character.attribute.communicate",
+                    "label": "dune.actor.character.trait.communicate",
                     "statement": "",
                     "value": 4,
                     "max": 10,
                     "selected": false
                 },
                 "discipline": {
-                    "label": "sta.actor.character.attribute.discipline",
+                    "label": "dune.actor.character.trait.discipline",
                     "statement": "",
                     "value": 4,
                     "max": 10,
                     "selected": false
                 },
                 "move": {
-                    "label": "sta.actor.character.attribute.move",
+                    "label": "dune.actor.character.trait.move",
                     "statement": "",
                     "value": 4,
                     "max": 10,
                     "selected": false
                 },
                 "understand": {
-                    "label": "sta.actor.character.attribute.understand",
+                    "label": "dune.actor.character.attribute.understand",
                     "statement": "",
                     "value": 4,
                     "max": 10,
@@ -54,35 +54,35 @@
             },
             "drives": {
                 "duty": {
-                    "label": "sta.actor.character.discipline.duty",
+                    "label": "dune.actor.character.drive.duty",
                     "value": 4,
                     "max": 10,
                     "selected": true,
                     "focus": ""
                 },
                 "faith": {
-                    "label": "sta.actor.character.discipline.faith",
+                    "label": "dune.actor.character.drive.faith",
                     "value": 4,
                     "max": 10,
                     "selected": false,
                     "focus": ""
                 },
                 "justice": {
-                    "label": "sta.actor.character.discipline.justice",
+                    "label": "dune.actor.character.drive.justice",
                     "value": 4,
                     "max": 10,
                     "selected": false,
                     "focus": ""
                 },
                 "power": {
-                    "label": "sta.actor.character.discipline.power",
+                    "label": "dune.actor.character.drive.power",
                     "value": 4,
                     "max": 10,
                     "selected": false,
                     "focus": ""
                 },
                 "truth": {
-                    "label": "sta.actor.character.discipline.truth",
+                    "label": "dune.actor.character.drive.truth",
                     "value": 4,
                     "max": 10,
                     "selected": false,

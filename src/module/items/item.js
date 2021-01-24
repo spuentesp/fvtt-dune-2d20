@@ -9,7 +9,7 @@ export class DuneItem extends Item {
     const actorData = this.actor ? this.actor.data : {};
     const data = itemData.data;
     
-    if (!this.data.img) this.data.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
+    if (!this.data.img) this.data.img = '/systems/dune-imperium/assets/icons/voyagercombadgeicon.svg';
 
     super.prepareData();
   }

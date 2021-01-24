@@ -3,9 +3,9 @@ export class Dune2d20RollDialog {
     let html = '';
     if (isAttribute) {
       // Grab the RollDialog HTML file/
-      html = await renderTemplate('systems/sta/templates/apps/dicepool-attribute.html', {'defaultValue': defaultValue});
+      html = await renderTemplate('systems/dune-imperium/templates/apps/dicepool-attribute.html', {'defaultValue': defaultValue});
     } else {
-      html = await renderTemplate('systems/sta/templates/apps/dicepool-challenge.html', {'defaultValue': defaultValue});
+      html = await renderTemplate('systems/dune-imperium/templates/apps/dicepool-challenge.html', {'defaultValue': defaultValue});
     }
 
     // Create a new promise for the HTML above.
@@ -14,11 +14,11 @@ export class Dune2d20RollDialog {
 
       // Create a new dialog.
       const dlg = new Dialog({
-        title: game.i18n.localize('sta.apps.dicepoolwindow'),
+        title: game.i18n.localize('dune.apps.dicepoolwindow'),
         content: html,
         buttons: {
           roll: {
-            label: game.i18n.localize('sta.apps.rolldice'),
+            label: game.i18n.localize('dune.apps.rolldice'),
             callback: (html) => {
               formData = new FormData(html[0].querySelector('#dice-pool-form'));
               return resolve(formData);

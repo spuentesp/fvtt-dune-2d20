@@ -19,8 +19,8 @@ export class DuneCharacterSheet extends ActorSheet {
   // If the player is not a GM and has limited permissions - send them to the limited sheet, otherwise, continue as usual.
   /** @override */
   get template() {
-    if ( !game.user.isGM && this.actor.limited) return 'systems/sta/templates/actors/limited-sheet.html';
-    return `systems/sta/templates/actors/character-sheet.html`;
+    if ( !game.user.isGM && this.actor.limited) return 'systems/dune-imperium/templates/actors/limited-sheet.html';
+    return `systems/dune-imperium/templates/actors/character-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -72,7 +72,7 @@ export class DuneCharacterSheet extends ActorSheet {
     // Checks if items for this actor have default images. Something with Foundry 0.7.9 broke this functionality operating normally.
     // Stopgap until a better solution can be found.
     $.each(data.items, (key, item) => {
-      if (!item.img) item.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
+      if (!item.img) item.img = '/systems/dune-imperium/assets/icons/voyagercombadgeicon.svg';
     })
 
     return data;

@@ -18,7 +18,7 @@ export class DuneCharacterWeaponSheet extends ItemSheet {
 	        ui.notifications.warn('You do not have permission to view this item!');
       return;
     }
-    return `systems/sta/templates/items/character-weapon-sheet.html`;
+    return `systems/dune-imperium/templates/items/character-weapon-sheet.html`;
   }
 
   /* -------------------------------------------- */

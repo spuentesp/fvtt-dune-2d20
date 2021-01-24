@@ -18,7 +18,7 @@ export class DuneTalentSheet extends ItemSheet {
       ui.notifications.warn('You do not have permission to view this item!');
       return;
     }
-    return 'systems/sta/templates/items/talent-sheet.html';
+    return 'systems/dune-imperium/templates/items/talent-sheet.html';
   }
 
   /* -------------------------------------------- */

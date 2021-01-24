@@ -3,15 +3,15 @@
       <div class="row">
           <img class="img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
           <div class="column-x3-img" >
-              <label class="label">{{localize 'sta.item.genericitem.name'}}</label>
+              <label class="label">{{localize 'dune.item.genericitem.name'}}</label>
               <input name="name" type="text" value="{{item.name}}" placeholder="Name" data-dtype="String" />
           </div>
           <div class="column-x1" >
-              <label class="label" style="margin-left:10px;">{{localize 'sta.actor.belonging.other.quantity'}}</label>
+              <label class="label" style="margin-left:10px;">{{localize 'dune.actor.belonging.other.quantity'}}</label>
               <input type="number" name="data.quantity" style="width: calc(100% - 10px);" value="{{data.quantity}}" data-dtype="Number" />
           </div>
           <div class="column-x1" >
-              <label class="label">{{localize 'sta.actor.smallcraft.child'}}</label>
+              <label class="label">{{localize 'dune.actor.smallcraft.child'}}</label>
               <select name="data.child">
                 {{#select data.child}}
                 {{#each availableSmallcrafts as |availableSmallcraft|}}
@@ -23,7 +23,7 @@
       </div>
   </div>
   <div class="description">
-    <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
+    <label class="label">{{localize 'dune.item.genericitem.description'}}</label>
       {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
   </div>
 </form>

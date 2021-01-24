@@ -31,8 +31,8 @@ export class ChallengeDie extends DiceTerm {
     // Combine all STA results.
     this.sta = {success: 0, effect: 0};
     this.results.forEach((result) => {
-      this.sta.success += parseInt(result.sta.success);
-      this.sta.effect += parseInt(result.sta.effect);
+      this.dune.success += parseInt(result.dune.success);
+      this.dune.effect += parseInt(result.dune.effect);
     });
 
     // Return the evaluated term
@@ -45,13 +45,13 @@ export class ChallengeDie extends DiceTerm {
   /** @override */
   roll(options) {
     const roll = super.roll(options);
-    roll.sta = CONFIG.sta.CHALLENGE_RESULTS[roll.result];
+    roll.sta = CONFIG.dune.CHALLENGE_RESULTS[roll.result];
     return roll;
   }
 
   /* -------------------------------------------- */
   /** @override */
   static getResultLabel(result) {
-    return CONFIG.sta.CHALLENGE_RESULTS[result].label;
+    return CONFIG.dune.CHALLENGE_RESULTS[result].label;
   }
 }

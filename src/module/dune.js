@@ -26,9 +26,7 @@ import {
 import {
   DuneGenericSheet
 } from './items/generic-sheet.js';
-import {
-  STASmallcraftContainerSheet
-} from './items/smallcraftcontainer-sheet.js';
+
 import { 
   DuneTracker
 } from './apps/tracker.js';
@@ -50,21 +48,19 @@ Hooks.once('init', function() {
 
 
   // Create a namespace within the game global
-  game.sta = {
+  game.dune = {
     applications: {
-      STACharacterSheet: DuneCharacterSheet,
-      STAExtendedTaskSheet: DuneExtendedTaskSheet,
-      STAItemSheet: DuneItemSheet,
-      STACharacterWeaponSheet: DuneCharacterWeaponSheet,
-      STAStarshipWeaponSheet: DuneStarshipWeaponSheet,
-      STAArmorSheet: DuneArmorSheet,
-      STATalentSheet: DuneTalentSheet,
-      STAGenericSheet: DuneGenericSheet,
-      STASmallcraftContainerSheet,
-      STAItem: DuneItem,
+      DuneCharacterSheet: DuneCharacterSheet,
+      DuneExtendedTaskSheet: DuneExtendedTaskSheet,
+      DuneItemSheet: DuneItemSheet,
+      DuneCharacterWeaponSheet: DuneCharacterWeaponSheet,
+      DuneArmorSheet: DuneArmorSheet,
+      DuneTalentSheet: DuneTalentSheet,
+      DuneGenericSheet: DuneGenericSheet,
+      DuneItem: DuneItem,
     },
     entities: {
-      STAActor: Dune2d20Actor,
+      Dune2d20Actor: Dune2d20Actor,
     },
     macros: macros,
     attributeTest: macros.attributeTest
@@ -77,13 +73,13 @@ Hooks.once('init', function() {
   };
 
   // Set up custom challenge dice
-  // CONFIG.sta.CHALLENGE_RESULTS = {
-  //     1: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Success1.svg'/>`, success: 1, effect: 0 },
-  //     2: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Success2.svg'/>`, success: 2, effect: 0 },
-  //     3: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
-  //     4: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
-  //     5: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
-  //     6: { label: `<img src='systems/sta/assets/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
+  // CONFIG.dune.CHALLENGE_RESULTS = {
+  //     1: { label: `<img src='systems/dune-imperium/assets/icons/ChallengeDie_Success1.svg'/>`, success: 1, effect: 0 },
+  //     2: { label: `<img src='systems/dune-imperium/assets/icons/ChallengeDie_Success2.svg'/>`, success: 2, effect: 0 },
+  //     3: { label: `<img src='systems/dune-imperium/assets/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
+  //     4: { label: `<img src='systems/dune-imperium/assets/icons/ChallengeDie_Success0.svg'/>`, success: 0, effect: 0 },
+  //     5: { label: `<img src='systems/dune-imperium/assets/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
+  //     6: { label: `<img src='systems/dune-imperium/assets/icons/ChallengeDie_Effect.svg'/>`, success: 1, effect: 1 },
   //   };
 
   // Define custom Entity classes
@@ -95,12 +91,6 @@ Hooks.once('init', function() {
   Actors.registerSheet('dune', DuneCharacterSheet, {
     types: ['character'],
     makeDefault: true
-  });
-  Actors.registerSheet('dune', STAStarshipSheet, {
-    types: ['starship']
-  });
-  Actors.registerSheet('dune', STASmallCraftSheet, {
-    types: ['smallcraft'],
   });
   Actors.registerSheet('dune', DuneExtendedTaskSheet, {
     types: ['extendedtask']
@@ -130,9 +120,6 @@ Hooks.once('init', function() {
   });
   Items.registerSheet('dune', DuneGenericSheet, {
     types: ['injury'],
-  });
-  Items.registerSheet('dune', STASmallcraftContainerSheet, {
-    types: ['smallcraftcontainer'],
   });
 
 
@@ -223,11 +210,11 @@ Hooks.once('init', function() {
       ui.notifications.error('The Momentum Tracker User Role does not have permissions to Modify Configuration Settings. Please change one of these in Permission Configuration or System Settings.');
     }
     const t = new DuneTracker();
-    renderTemplate('systems/sta/templates/apps/tracker.html').then((html) => {
+    renderTemplate('systems/dune-imperium/templates/apps/tracker.html').then((html) => {
       t.render(true);
     });
     const l = new DuneLogo();
-    renderTemplate('systems/sta/templates/apps/logo.html').then((html) => {
+    renderTemplate('systems/dune-imperium/templates/apps/logo.html').then((html) => {
       l.render(true);
     });
   });

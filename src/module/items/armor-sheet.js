@@ -18,7 +18,7 @@ export class DuneArmorSheet extends ItemSheet {
 	        ui.notifications.warn('You do not have permission to view this item!');
       return;
     }
-    return `systems/sta/templates/items/armor-sheet.html`;
+    return `systems/dune-imperium/templates/items/armor-sheet.html`;
   }
 
   /* -------------------------------------------- */

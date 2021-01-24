@@ -3,17 +3,17 @@
     <div class="row">
       <img class="img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
       <div class="column-x3-img">
-        <label class="label">{{localize 'sta.item.genericitem.name'}}</label>
+        <label class="label">{{localize 'dune.item.genericitem.name'}}</label>
         <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
       </div>
       <div class="column-x1">
-        <label class="label">{{localize 'sta.item.talent.type.title'}}</label>
+        <label class="label">{{localize 'dune.item.talent.type.title'}}</label>
         <select name="data.talenttype.typeenum">
           {{#select data.talenttype.typeenum}}
-          <option value="general">{{localize 'sta.item.talent.type.general'}}</option>
-          <option value="discipline">{{localize 'sta.item.talent.type.discipline'}}</option>
-          <option value="species">{{localize 'sta.actor.character.species'}}</option>
-          <option value="house">{{localize 'sta.item.talent.houselegacy'}}</option>
+          <option value="general">{{localize 'dune.item.talent.type.general'}}</option>
+          <option value="discipline">{{localize 'dune.item.talent.type.discipline'}}</option>
+          <option value="species">{{localize 'dune.actor.character.species'}}</option>
+          <option value="house">{{localize 'dune.item.talent.houselegacy'}}</option>
           {{/select}}
         </select>
       </div>
@@ -22,15 +22,15 @@
     <div class="row">
       <div class="column-x1"></div>
       <div class="column-x3">
-        <label class="label">{{localize 'sta.item.talent.requires'}}</label>
+        <label class="label">{{localize 'dune.item.talent.requires'}}</label>
         <select name="data.talenttype.description">
           {{#select data.talenttype.description}}
-          <option value="command">{{localize 'sta.actor.character.discipline.command'}}</option>
-          <option value="conn">{{localize 'sta.actor.character.discipline.conn'}}</option>
-          <option value="engineering">{{localize 'sta.actor.character.discipline.engineering'}}</option>
-          <option value="medicine">{{localize 'sta.actor.character.discipline.medicine'}}</option>
-          <option value="science">{{localize 'sta.actor.character.discipline.science'}}</option>
-          <option value="security">{{localize 'sta.actor.character.discipline.security'}}</option>
+          <option value="command">{{localize 'dune.actor.character.discipline.command'}}</option>
+          <option value="conn">{{localize 'dune.actor.character.discipline.conn'}}</option>
+          <option value="engineering">{{localize 'dune.actor.character.discipline.engineering'}}</option>
+          <option value="medicine">{{localize 'dune.actor.character.discipline.medicine'}}</option>
+          <option value="science">{{localize 'dune.actor.character.discipline.science'}}</option>
+          <option value="security">{{localize 'dune.actor.character.discipline.security'}}</option>
           {{/select}}
         </select>
       </div>
@@ -45,7 +45,7 @@
   <div class="row">
     <div class="column-x1"></div>
     <div class="column-x2">
-      <label class="label">{{localize 'sta.item.talent.requires'}} {{localize 'sta.actor.character.species'}} </label>
+      <label class="label">{{localize 'dune.item.talent.requires'}} {{localize 'dune.actor.character.species'}} </label>
       <input style="width:100px;" type="text" name="data.talenttype.description" value="{{data.talenttype.description}}" />
     </div>
     <div class="column-x1"></div>
@@ -55,15 +55,15 @@
   <div class="row">
     <div class="column-x1"></div>
     <div class="column-x3">
-      <label class="label">{{localize 'sta.item.talent.requires'}} {{localize 'sta.item.talent.houserequired'}} </label>
+      <label class="label">{{localize 'dune.item.talent.requires'}} {{localize 'dune.item.talent.houserequired'}} </label>
       <select name="data.talenttype.description">
         {{#select data.talenttype.description}}
-        <option value="leaders">{{localize 'sta.item.house.legacy.leaders'}}</option>
-        <option value="warriors">{{localize 'sta.item.house.legacy.warriors'}}</option>
-        <option value="spacefarers">{{localize 'sta.item.house.legacy.spacefarers'}}</option>
-        <option value="engineers">{{localize 'sta.item.house.legacy.engineers'}}</option>
-        <option value="scientists">{{localize 'sta.item.house.legacy.scientists'}}</option>
-        <option value="physicians">{{localize 'sta.item.house.legacy.physicians'}}</option>
+        <option value="leaders">{{localize 'dune.item.house.legacy.leaders'}}</option>
+        <option value="warriors">{{localize 'dune.item.house.legacy.warriors'}}</option>
+        <option value="spacefarers">{{localize 'dune.item.house.legacy.spacefarers'}}</option>
+        <option value="engineers">{{localize 'dune.item.house.legacy.engineers'}}</option>
+        <option value="scientists">{{localize 'dune.item.house.legacy.scientists'}}</option>
+        <option value="physicians">{{localize 'dune.item.house.legacy.physicians'}}</option>
         {{/select}}
       </select>
     </div>
@@ -72,7 +72,7 @@
 </div>
   {{/if}}
   <div class="description">
-    <label class="label">{{localize 'sta.item.genericitem.description'}}</label>
+    <label class="label">{{localize 'dune.item.genericitem.description'}}</label>
     {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
   </div>
 </form>

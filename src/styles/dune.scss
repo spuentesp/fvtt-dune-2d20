@@ -125,7 +125,7 @@ $trackColors: (
 /*#endregion*/
 
 /* LCARS Layout *//*#region*/
-.sta.sheet.actor {
+.dune.sheet.actor {
   .header {
     display: flex;
   }
@@ -255,7 +255,7 @@ $trackColors: (
 /*#endregion*/
 
 /* Actor Sheet *//*#region*/
-.sta.sheet.actor {
+.dune.sheet.actor {
   /* Colors */
   .title {
     height: 30px;
@@ -569,7 +569,7 @@ $trackColors: (
               }
 
               .chat:hover {
-                content: url("/systems/sta/assets/icons/chat-bubble.svg");
+                content: url("/systems/dune-imperium/assets/icons/chat-bubble.svg");
                 box-shadow: none;
                 cursor: pointer;
               }
@@ -730,7 +730,7 @@ $trackColors: (
 /*#endregion*/
 
 /* Item Sheet  *//*#region*/
-.sta.sheet.item {
+.dune.sheet.item {
   .label {
     color: $labelColor;
   }
@@ -992,7 +992,7 @@ $trackColors: (
   padding: 4px 5px;
 }
 
-.sta.roll{
+.dune.roll{
   .dice-roll .dice-result .dice-tooltip {
     display: block;
   }
@@ -1082,7 +1082,7 @@ $trackColors: (
 
 /*  Momentum/Threat Tracker *//*#region*/
 
-.sta.tracker {
+.dune.tracker {
   position: absolute;
   display: block;
   margin-right: 0;
@@ -1154,8 +1154,8 @@ $trackColors: (
   }
 }
 
-#sidebar:not(.collapsed) ~ .sta.tracker.momentum, 
-#sidebar:not(.collapsed) ~ .sta.tracker.threat {
+#sidebar:not(.collapsed) ~ .dune.tracker.momentum, 
+#sidebar:not(.collapsed) ~ .dune.tracker.threat {
   right: 354px;
 }
 /*#endregion*/
@@ -1163,7 +1163,7 @@ $trackColors: (
 
 /* Logo - Generic *//*#region*/
 
-.sta.logo {
+.dune.logo {
   position: absolute;
   display: block;
   margin-right: 0;

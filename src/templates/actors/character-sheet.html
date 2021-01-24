@@ -56,16 +56,15 @@
             </div>
             <div class="stat header row">
               <div class="selector-space"></div>
-              <div class="text secondary-title">{{localize 'dune.actor.character.attribute.name'}}</div>
+              <div class="text secondary-title">{{localize 'dune.actor.character.trait.name'}}</div>
               <div class="field secondary-title">{{localize 'dune.actor.attdis.mod'}}</div>
             </div>
-            {{#each data.traits as |attribute key|}}
+            {{#each data.traits as |trait key|}}
             <div class="stat row">
-              <input class="selector attribute" id="{{key}}.selector" type="checkbox" name="data.attributes.{{key}}.selected" data-dtype="Boolean" {{checked attribute.selected}}>
-              <div class="text list-entry"> {{localize attribute.label}} </div>
-              <input class="field numeric-entry" id="{{key}}" name="data.attributes.{{key}}.value" type="text" value="{{attribute.value}}" />
-
-              <input class="field numeric-entry" id="{{key}}" name="data.attributes.{{key}}.value" type="text" value="{{attribute.statement}}" />
+              <input class="selector attribute" id="{{key}}.selector" type="checkbox" name="data.traits.{{key}}.selected" data-dtype="Boolean" {{checked attribute.selected}}>
+              <div class="text list-entry"> {{localize trait.label}} </div>
+              <input class="field numeric-entry" id="{{key}}" name="data.traits.{{key}}.value" type="text" value="{{trait.value}}" />
+              <input class="field numeric-entry" id="{{key}}" name="data.traits.{{key}}.value" type="text" value="{{trait.statement}}" />
             </div>
             {{/each}}
             <div class="check-button btn2 challenge">{{localize 'dune.actor.challenge.roll'}}</div>
@@ -98,18 +97,18 @@
         <div class="column right-column">
           <div class="section discipline">
             <div class="title">
-              {{localize 'dune.actor.character.discipline.title'}}
+              {{localize 'dune.actor.character.drive.title'}}
             </div>
             <div class="stat header row">
               <div class="field secondary-title">{{localize 'dune.actor.attdis.mod'}}</div>
-              <div class="text secondary-title">{{localize 'dune.actor.character.discipline.name'}}</div>
+              <div class="text secondary-title">{{localize 'dune.actor.character.drive.name'}}</div>
               <div class="selector-space"></div>
             </div>
-            {{#each data.disciplines as |discipline key|}}
+            {{#each data.drive as |drive key|}}
             <div class="stat row">
-              <input class="field numeric-entry" id="{{key}}" name="data.disciplines.{{key}}.value" type="text" value="{{discipline.value}}" placeholder="Name" />
-              <div class="text list-entry"> {{localize discipline.label}} </div>
-              <input class="selector discipline" id="{{key}}.selector" type="checkbox" name="data.disciplines.{{key}}.selected" data-dtype="Boolean" {{checked discipline.selected}}>
+              <input class="field numeric-entry" id="{{key}}" name="data.drives.{{key}}.value" type="text" value="{{drive.value}}" placeholder="Name" />
+              <div class="text list-entry"> {{localize drive.label}} </div>
+              <input class="selector discipline" id="{{key}}.selector" type="checkbox" name="data.drives.{{key}}.selected" data-dtype="Boolean" {{checked drive.selected}}>
             </div>
             {{/each}}
             <div class="check-button btn attribute">{{localize 'dune.actor.attdis.task'}}</div>

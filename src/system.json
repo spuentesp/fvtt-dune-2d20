@@ -1,7 +1,7 @@
 {
 	"name": "dune-imperium",
 	"title": "Dune - Adventures in the imperium",
-	"description": "An unofficial rendition of the Modiphius tabletop role playing game system.",
+	"description": "An unofficial rendition of the Modiphius tabletop role playing game system.\n based on the star trek 2d20 system for foundry vtt",
 	"version": "0.0.1-conversion.0",
 	"minimumCoreVersion": "0.7.7",
 	"compatibleCoreVersion": "0.7.9",

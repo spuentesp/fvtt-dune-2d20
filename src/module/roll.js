@@ -46,9 +46,9 @@ export class dune2d20roll {
     // Here we want to check if the success was exactly one (as "1 Successes" doesn't make grammatical sense). We create a string for the Successes.
     let successText = '';
     if (success == 1) {
-      successText = success + ' ' + game.i18n.format('sta.roll.success');
+      successText = success + ' ' + game.i18n.format('dune.roll.success');
     } else {
-      successText = success + ' ' + game.i18n.format('sta.roll.successPlural');
+      successText = success + ' ' + game.i18n.format('dune.roll.successPlural');
     }
 
     // Check if we allow multiple complications, or if only one complication ever happens.
@@ -59,10 +59,10 @@ export class dune2d20roll {
     let complicationText = '';
     if (complication >= 1) {
       if (complication > 1 && multipleComplicationsAllowed === true) {
-        const localisedPluralisation = game.i18n.format('sta.roll.complicationPlural');
+        const localisedPluralisation = game.i18n.format('dune.roll.complicationPlural');
         complicationText = '<h4 class="dice-total failure"> ' + localisedPluralisation.replace('|#|', complication) + '</h4>';
       } else {
-        complicationText = '<h4 class="dice-total failure"> ' + game.i18n.format('sta.roll.complication') + '</h4>';
+        complicationText = '<h4 class="dice-total failure"> ' + game.i18n.format('dune.roll.complication') + '</h4>';
       }
     } else {
       complicationText = '';
@@ -72,10 +72,10 @@ export class dune2d20roll {
     let flavor = '';
     switch (speaker.data.type) {
     case 'character':
-      flavor = game.i18n.format('sta.actor.character.attribute.' + selectedTrait) + ' ' + game.i18n.format('sta.actor.character.discipline.' + selectedDriveValue) + ' ' + game.i18n.format('sta.roll.task.name');
+      flavor = game.i18n.format('dune.actor.character.attribute.' + selectedTrait) + ' ' + game.i18n.format('dune.actor.character.discipline.' + selectedDriveValue) + ' ' + game.i18n.format('dune.roll.task.name');
       break;
     case 'starship':
-      flavor = game.i18n.format('sta.actor.starship.system.' + selectedTrait) + ' ' + game.i18n.format('sta.actor.starship.department.' + selectedDriveValue) + ' ' + game.i18n.format('sta.roll.task.name');
+      flavor = game.i18n.format('dune.actor.starship.system.' + selectedTrait) + ' ' + game.i18n.format('dune.actor.starship.department.' + selectedDriveValue) + ' ' + game.i18n.format('dune.roll.task.name');
     }
 
     // Build a dynamic html using the variables from above.
@@ -88,7 +88,7 @@ export class dune2d20roll {
                                 <tr>
                                     <td> ` + dicePool + `d20 </td>
                                     <td> Target:` + checkTarget + ` </td>
-                                    <td> ` + game.i18n.format('sta.roll.complicationrange') + complicationMinimumValue + `+ </td>
+                                    <td> ` + game.i18n.format('dune.roll.complicationrange') + complicationMinimumValue + `+ </td>
                                     </tr>
                             </table>
                         </div>
@@ -104,7 +104,7 @@ export class dune2d20roll {
                     </div>
                 </div>
                 <div class="reroll-result attribute">
-                    <span>` + game.i18n.format('sta.roll.rerollresults') + `</span>
+                    <span>` + game.i18n.format('dune.roll.rerollresults') + `</span>
                     <input id="selectedAttribute" type="hidden" value="` + selectedTrait + `" >
                     <input id="selectedAttributeValue" type="hidden" value="` + selectedTraitValue + `" >
                     <input id="selectedDiscipline" type="hidden" value="` + selectedDriveValue + `" >
@@ -142,23 +142,23 @@ export class dune2d20roll {
             
       switch (result) {
       case 1:
-        diceString += '<li class="roll die d6"><img src="systems/sta/assets/icons/ChallengeDie_Success1_small.png" /></li>';
+        diceString += '<li class="roll die d6"><img src="systems/dune-imperium/assets/icons/ChallengeDie_Success1_small.png" /></li>';
         success += 1;
         break;
       case 2:
-        diceString += '<li class="roll die d6"><img src="systems/sta/assets/icons/ChallengeDie_Success2_small.png" /></li>';
+        diceString += '<li class="roll die d6"><img src="systems/dune-imperium/assets/icons/ChallengeDie_Success2_small.png" /></li>';
         success += 2;
         break;
       case 5:
       case 6:
-        diceString += '<li class="roll die d6"><img src="systems/sta/assets/icons/ChallengeDie_Effect_small.png" /></li>';
+        diceString += '<li class="roll die d6"><img src="systems/dune-imperium/assets/icons/ChallengeDie_Effect_small.png" /></li>';
         success += 1;
         effect += 1;
         break;
       case 3:
       case 4:
       default:
-        diceString += '<li class="roll die d6"><img src="systems/sta/assets/icons/ChallengeDie_Success0_small.png" /></li>';
+        diceString += '<li class="roll die d6"><img src="systems/dune-imperium/assets/icons/ChallengeDie_Success0_small.png" /></li>';
         break;
       }
     }
@@ -166,9 +166,9 @@ export class dune2d20roll {
     // Here we want to check if the success was exactly one (as "1 Successes" doesn't make grammatical sense). We create a string for the Successes.
     let successText = '';
     if (success == 1) {
-      successText = success + game.i18n.format('sta.roll.success');
+      successText = success + game.i18n.format('dune.roll.success');
     } else {
-      successText = success + game.i18n.format('sta.roll.successPlural');
+      successText = success + game.i18n.format('dune.roll.successPlural');
     }
 
     // If there is any effect, we want to crate a string for this. If we have multiple effects and they exist, we want to pluralise this also.
@@ -176,14 +176,14 @@ export class dune2d20roll {
     let effectText = '';
     if (effect >= 1) {
       if (effect > 1) {
-        const localisedPluralisation = game.i18n.format('sta.roll.effectPlural');
+        const localisedPluralisation = game.i18n.format('dune.roll.effectPlural');
         effectText = '<h4 class="dice-total effect"> ' + localisedPluralisation.replace('|#|', effect) + '</h4>';
       } else {
-        effectText = '<h4 class="dice-total effect"> ' + game.i18n.format('sta.roll.effect') + '</h4>';
+        effectText = '<h4 class="dice-total effect"> ' + game.i18n.format('dune.roll.effect') + '</h4>';
       }
     }
 
-    const flavor = weaponName + ' ' + game.i18n.format('sta.roll.task.name');
+    const flavor = weaponName + ' ' + game.i18n.format('dune.roll.task.name');
                 
     // Build a dynamic html using the variables from above.
     const html = `
@@ -209,7 +209,7 @@ export class dune2d20roll {
                 </div>
               </div>
               <div class="reroll-result challenge">
-                <span>` + game.i18n.format('sta.roll.rerollresults') + `</span>
+                <span>` + game.i18n.format('dune.roll.rerollresults') + `</span>
                 <input id="speakerId" type="hidden" value="` + speaker._id + `" >
               </div>
             </div>`;
@@ -226,7 +226,7 @@ export class dune2d20roll {
 
   async performItemRoll(item, speaker) {
     // Create variable div and populate it with localisation to use in the HTML.
-    const variablePrompt = game.i18n.format('sta.roll.item.quantity');
+    const variablePrompt = game.i18n.format('dune.roll.item.quantity');
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.quantity)+`</div>`;
     
     // Send the divs to populate a HTML template and sends to chat.
@@ -265,29 +265,29 @@ export class dune2d20roll {
 
   async performWeaponRoll(item, speaker) {
     // Create variable div and populate it with localisation to use in the HTML.
-    const variablePrompt = game.i18n.format('sta.roll.weapon.damage');
+    const variablePrompt = game.i18n.format('dune.roll.weapon.damage');
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.damage)+`</div>`;
     
     // Create dynamic tags div and populate it with localisation to use in the HTML.
     let tags = '';
     
-    if (item.data.data.qualities.melee) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.melee')+'</div>';
-    if (item.data.data.qualities.ranged) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.ranged')+'</div>';
-    if (item.data.data.qualities.area) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.area')+'</div>';
-    if (item.data.data.qualities.intense) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.intense')+'</div>';
-    if (item.data.data.qualities.knockdown) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.knockdown')+'</div>';
-    if (item.data.data.qualities.accurate) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.accurate')+'</div>';
-    if (item.data.data.qualities.charge) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.charge')+'</div>';
-    if (item.data.data.qualities.cumbersome) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.cumbersome')+'</div>';
-    if (item.data.data.qualities.deadly) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.deadly')+'</div>';
-    if (item.data.data.qualities.debilitating) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.debilitating')+'</div>';
-    if (item.data.data.qualities.grenade) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.grenade')+'</div>';
-    if (item.data.data.qualities.inaccurate) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.inaccurate')+'</div>';
-    if (item.data.data.qualities.nonlethal) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.nonlethal')+'</div>';
+    if (item.data.data.qualities.melee) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.melee')+'</div>';
+    if (item.data.data.qualities.ranged) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.ranged')+'</div>';
+    if (item.data.data.qualities.area) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.area')+'</div>';
+    if (item.data.data.qualities.intense) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.intense')+'</div>';
+    if (item.data.data.qualities.knockdown) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.knockdown')+'</div>';
+    if (item.data.data.qualities.accurate) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.accurate')+'</div>';
+    if (item.data.data.qualities.charge) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.charge')+'</div>';
+    if (item.data.data.qualities.cumbersome) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.cumbersome')+'</div>';
+    if (item.data.data.qualities.deadly) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.deadly')+'</div>';
+    if (item.data.data.qualities.debilitating) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.debilitating')+'</div>';
+    if (item.data.data.qualities.grenade) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.grenade')+'</div>';
+    if (item.data.data.qualities.inaccurate) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.inaccurate')+'</div>';
+    if (item.data.data.qualities.nonlethal) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.nonlethal')+'</div>';
 
-    if (item.data.data.qualities.hiddenx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.hiddenx') + ' ' + item.data.data.qualities.hiddenx +'</div>';
-    if (item.data.data.qualities.piercingx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.piercingx') + ' ' + item.data.data.qualities.piercingx +'</div>';
-    if (item.data.data.qualities.viciousx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('sta.actor.belonging.weapon.viciousx') + ' ' + item.data.data.qualities.viciousx +'</div>';
+    if (item.data.data.qualities.hiddenx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.hiddenx') + ' ' + item.data.data.qualities.hiddenx +'</div>';
+    if (item.data.data.qualities.piercingx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.piercingx') + ' ' + item.data.data.qualities.piercingx +'</div>';
+    if (item.data.data.qualities.viciousx > 0) tags += '<div class=\'tag\'> '+game.i18n.format('dune.actor.belonging.weapon.viciousx') + ' ' + item.data.data.qualities.viciousx +'</div>';
 
         
     // Send the divs to populate a HTML template and sends to chat.
@@ -298,7 +298,7 @@ export class dune2d20roll {
 
   async performArmorRoll(item, speaker) {
     // Create variable div and populate it with localisation to use in the HTML.
-    const variablePrompt = game.i18n.format('sta.roll.armor.protect');
+    const variablePrompt = game.i18n.format('dune.roll.armor.protect');
     const variable = `<div class='dice-formula'> `+variablePrompt.replace('|#|', item.data.data.protection)+`</div>`;
     
     // Send the divs to populate a HTML template and sends to chat.

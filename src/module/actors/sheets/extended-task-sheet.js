@@ -20,7 +20,7 @@ export class DuneExtendedTaskSheet extends ActorSheet {
       ui.notifications.warn('You do not have permission to view this sheet!');
       return false;
     }
-    return `systems/sta/templates/actors/extended-task-sheet.html`;
+    return `systems/dune-imperium/templates/actors/extended-task-sheet.html`;
   }
 
   /* -------------------------------------------- */

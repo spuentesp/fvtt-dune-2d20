@@ -1,7 +1,7 @@
 export class DuneLogo extends Application {
   static get defaultOptions() {
     const options = super.defaultOptions;
-    options.template = 'systems/sta/templates/apps/logo.html';
+    options.template = 'systems/dune-imperium/templates/apps/logo.html';
     options.popOut = false;
     options.resizable = false;
     return options;

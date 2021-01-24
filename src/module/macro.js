@@ -40,8 +40,8 @@ export function attributeTest(actor, usingFocus, usingDetermination,
     parseInt(actor.data.data.attributes[selectedAttribute].value);
   const discValue = 
     parseInt(actor.data.data.disciplines[selectedDiscipline].value);
-  const staRoll = new dune2d20roll();
-  staRoll.performAttributeTest(numberOfDice, usingFocus, usingDetermination,
+  const duneRoll = new dune2d20roll();
+  duneRoll.performAttributeTest(numberOfDice, usingFocus, usingDetermination,
     selectedAttribute, attrValue, selectedDiscipline,
     discValue, complicationRange, actor);
 }

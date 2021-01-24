@@ -1,11 +1,12 @@
 {
 	"name": "dune",
 	"scripts": {
+    "test":"gulp build && gulp copy && xcopy /e/h/y/q \"dist\" \"C:\\Users\\spuentesp\\AppData\\Local\\FoundryVTT\\Data\\systems\\dune-imperium\\\"",
 		"package": "gulp package",
 		"transpile": "gulp build",
 		"build": "gulp build && gulp copy",
     "build:watch": "gulp watch",
-    "sendto:win":"xcopy /e/h/y/q \"src\" \"C:\\Users\\spuentesp\\AppData\\Local\\FoundryVTT\\Data\\systems\\dune-imperium\\\"",
+    "sendtofolder:win":"xcopy /e/h/y/q \"dist\" \"C:\\Users\\spuentesp\\AppData\\Local\\FoundryVTT\\Data\\systems\\dune-imperium\\\"",
     "sendto:linux":"xcopy /e/h/y/q \"../2/src\" \"./src\\\" > nul",
 		"clean": "gulp clean && gulp copy --clean",
 		"lint": "eslint"
