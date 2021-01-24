@@ -33,6 +33,11 @@
               <input name="name" class="text-entry" type="text" value="{{actor.name}}" placeholder="{{localize 'dune.actor.character.ambition'}}" />
             </div>
           </div>
+          <div class="column">
+            <div class="section img">
+              <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -76,9 +81,6 @@
               <input type="hidden" id="max-stress" name="data.stress.max" value="{{data.stress.max}}" data-dtype="Number" />
               <div id="bar-stress-renderer" class=" bar"></div>
             </div>
-          </div>
-          <div class="section img">
-            <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
           </div>
           <div class="section determination">
             <div class="title">

@@ -1,19 +1,24 @@
 {
-	"name": "sta",
+	"name": "dune",
 	"scripts": {
 		"package": "gulp package",
 		"transpile": "gulp build",
 		"build": "gulp build && gulp copy",
-		"build:watch": "gulp watch",
+    "build:watch": "gulp watch",
+    "sendto:win":"xcopy /e/h/y/q \"src\" \"C:\\Users\\spuentesp\\AppData\\Local\\FoundryVTT\\Data\\systems\\dune-imperium\\\"",
+    "sendto:linux":"xcopy /e/h/y/q \"../2/src\" \"./src\\\" > nul",
 		"clean": "gulp clean && gulp copy --clean",
 		"lint": "eslint"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"copyfiles": "^2.4.1"
+	},
 	"devDependencies": {
 		"archiver": "^5.1.0",
 		"chalk": "^4.1.0",
 		"eslint": "^7.16.0",
 		"eslint-config-google": "^0.14.0",
+		"eslint-plugin-html": "^1.4.0",
 		"eslint-config-prettier": "^7.1.0",
 		"eslint-plugin-prettier": "^3.3.0",
 		"fs-extra": "^9.0.1",
