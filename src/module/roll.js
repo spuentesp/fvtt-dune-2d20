@@ -1,6 +1,6 @@
 export class dune2d20roll {
   async performAttributeTest(dicePool, usingFocus, usingDetermination,
-    selectedAttribute, selectedTraitValue, selectedDriveValue,
+    selectedTrait, selectedTraitValue, selectedDriveValue,
     selectedDisciplineValue, complicationRange, speaker) {
     // Define some variables that we will be using later.
     
@@ -52,7 +52,7 @@ export class dune2d20roll {
     }
 
     // Check if we allow multiple complications, or if only one complication ever happens.
-    const multipleComplicationsAllowed = game.settings.get('sta', 'multipleComplications');
+    const multipleComplicationsAllowed = game.settings.get('dune', 'multipleComplications');
 
     // If there is any complications, we want to crate a string for this. If we allow multiple complications and they exist, we want to pluralise this also.
     // If no complications exist then we don't even show this box.
@@ -72,10 +72,10 @@ export class dune2d20roll {
     let flavor = '';
     switch (speaker.data.type) {
     case 'character':
-      flavor = game.i18n.format('sta.actor.character.attribute.' + selectedAttribute) + ' ' + game.i18n.format('sta.actor.character.discipline.' + selectedDriveValue) + ' ' + game.i18n.format('sta.roll.task.name');
+      flavor = game.i18n.format('sta.actor.character.attribute.' + selectedTrait) + ' ' + game.i18n.format('sta.actor.character.discipline.' + selectedDriveValue) + ' ' + game.i18n.format('sta.roll.task.name');
       break;
     case 'starship':
-      flavor = game.i18n.format('sta.actor.starship.system.' + selectedAttribute) + ' ' + game.i18n.format('sta.actor.starship.department.' + selectedDriveValue) + ' ' + game.i18n.format('sta.roll.task.name');
+      flavor = game.i18n.format('sta.actor.starship.system.' + selectedTrait) + ' ' + game.i18n.format('sta.actor.starship.department.' + selectedDriveValue) + ' ' + game.i18n.format('sta.roll.task.name');
     }
 
     // Build a dynamic html using the variables from above.
@@ -105,7 +105,7 @@ export class dune2d20roll {
                 </div>
                 <div class="reroll-result attribute">
                     <span>` + game.i18n.format('sta.roll.rerollresults') + `</span>
-                    <input id="selectedAttribute" type="hidden" value="` + selectedAttribute + `" >
+                    <input id="selectedAttribute" type="hidden" value="` + selectedTrait + `" >
                     <input id="selectedAttributeValue" type="hidden" value="` + selectedTraitValue + `" >
                     <input id="selectedDiscipline" type="hidden" value="` + selectedDriveValue + `" >
                     <input id="selectedDisciplineValue" type="hidden" value="` + selectedDisciplineValue + `" >

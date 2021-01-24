@@ -1,8 +1,8 @@
 import {
-  STASharedActorFunctions
+  DuneSharedActorFunctions
 } from '../actors/actor.js';
 
-export class STAItem extends Item {
+export class DuneItem extends Item {
   // Augment basic Item data model with additional dynamic data.
   prepareData() {
     const itemData = this.data;
@@ -28,7 +28,7 @@ export class STAItem extends Item {
 
   static async _onChatAttributeRerollResult(event) {
     event.preventDefault();
-    const staActor = new STASharedActorFunctions();
+    const staActor = new DuneSharedActorFunctions();
 
     const children = event.currentTarget.children;
     const speaker = game.actors.find((target) => 
@@ -41,7 +41,7 @@ export class STAItem extends Item {
 
   static async _onChatChallengeRerollResult(event) {
     event.preventDefault();
-    const staActor = new STASharedActorFunctions();
+    const staActor = new DuneSharedActorFunctions();
 
     const currentChildren = event.currentTarget.children;
     const speaker = game.actors.find((target) => 

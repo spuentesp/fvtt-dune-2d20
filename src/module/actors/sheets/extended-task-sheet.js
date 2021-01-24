@@ -1,12 +1,12 @@
 import {
-  STASharedActorFunctions
+  DuneSharedActorFunctions
 } from '../actor.js';
 
-export class STAExtendedTaskSheet extends ActorSheet {
+export class DuneExtendedTaskSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'actor', 'extendedtask'],
+      classes: ['dune', 'sheet', 'actor', 'extendedtask'],
       width: 500,
       height: 600
     });
@@ -44,8 +44,8 @@ export class STAExtendedTaskSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
     
-    // Opens the class STASharedActorFunctions for access at various stages.
-    const staActor = new STASharedActorFunctions();
+    // Opens the class DuneSharedActorFunctions for access at various stages.
+    const staActor = new DuneSharedActorFunctions();
 
     // If the player has limited access to the actor, there is nothing to see here. Return.
     if ( !game.user.isGM && this.actor.limited) return;

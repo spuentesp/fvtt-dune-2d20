@@ -1,23 +1,22 @@
 import {
-  STARollDialog
+  Dune2d20RollDialog
 } from '../apps/roll-dialog.js';
 import {
   dune2d20roll
 } from '../roll.js';
 
-export class STAActor extends Actor {
+export class Dune2d20Actor extends Actor {
   prepareData() {
     if (!this.data.img) this.data.img = '/systems/sta/assets/icons/voyagercombadgeicon.svg';
-
     super.prepareData();
   }
 }
 
 /** Shared functions for actors */
-export class STASharedActorFunctions {
+export class DuneSharedActorFunctions {
   // This function renders all the tracks. This will be used every time the character sheet is loaded. It is a vital element as such it runs before most other code!
-  staRenderTracks(html, stressTrackMax, determinationPointsMax,
-    repPointsMax, shieldsTrackMax, powerTrackMax, crewTrackMax) {
+  duneRenderTracks(html, stressTrackMax, determinationPointsMax,
+                   repPointsMax, shieldsTrackMax, powerTrackMax, crewTrackMax) {
     let i;
     // Checks if details for the Stress Track was included, this should happen for all Characters!
     if (stressTrackMax) {
@@ -100,12 +99,12 @@ export class STASharedActorFunctions {
   }
 
   // This handles performing an attribute test using the "Perform Check" button.
-  async rollAttributeTest(event, selectedAttribute, selectedAttributeValue,
-    selectedDiscipline, selectedDisciplineValue, defaultValue, speaker) {
+  async rollAttributeTest(event, selectedTrait, selectedTraitValue,
+    selectedDrive, selectedDriveValue, defaultValue, speaker) {
     event.preventDefault();
     if (!defaultValue) defaultValue = 2;
     // This creates a dialog to gather details regarding the roll and waits for a response
-    const rolldialog = await STARollDialog.create(true, defaultValue);
+    const rolldialog = await Dune2d20RollDialog.create(true, defaultValue);
     if (rolldialog) {
       const dicePool = rolldialog.get('dicePoolSlider');
       const usingFocus = rolldialog.get('usingFocus') == null ? false : true;
@@ -114,8 +113,8 @@ export class STASharedActorFunctions {
       // Once the response has been collected it then sends it to be rolled.
       const staRoll = new dune2d20roll();
       staRoll.performAttributeTest(dicePool, usingFocus, usingDetermination,
-        selectedAttribute, selectedAttributeValue, selectedDiscipline,
-        selectedDisciplineValue, complicationRange, speaker);
+        selectedTrait, selectedTraitValue, selectedDrive,
+        selectedDriveValue, complicationRange, speaker);
     }
   }
 	
@@ -123,7 +122,7 @@ export class STASharedActorFunctions {
   async rollChallengeRoll(event, weaponName, defaultValue, speaker) {
     event.preventDefault();
     // This creates a dialog to gather details regarding the roll and waits for a response
-    const rolldialog = await STARollDialog.create(false, defaultValue);
+    const rolldialog = await Dune2d20RollDialog.create(false, defaultValue);
     if (rolldialog) {
       const dicePool = rolldialog.get('dicePoolValue');
       // Once the response has been collected it then sends it to be rolled.

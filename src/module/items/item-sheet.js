@@ -1,8 +1,8 @@
-export class STAItemSheet extends ItemSheet {
+export class DuneItemSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'item', 'item'],
+      classes: ['dune', 'sheet', 'item', 'item'],
       width: 500,
       height: 480,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]

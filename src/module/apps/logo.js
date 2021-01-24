@@ -1,4 +1,4 @@
-export class STALogo extends Application {
+export class DuneLogo extends Application {
   static get defaultOptions() {
     const options = super.defaultOptions;
     options.template = 'systems/sta/templates/apps/logo.html';

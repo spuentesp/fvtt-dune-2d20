@@ -1,10 +1,10 @@
-import {STASharedActorFunctions} from '../actor.js';
+import {DuneSharedActorFunctions} from '../actor.js';
 
 export class STACharacterSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'actor', 'character'],
+      classes: ['dune', 'sheet', 'actor', 'character'],
       width: 850,
       height: 910,
       dragDrop: [{
@@ -30,44 +30,6 @@ export class STACharacterSheet extends ActorSheet {
     const data = super.getData();
 
     // Ensure attribute and discipline values don't weigh over the max.
-    $.each(data.data.attributes, (attribute) => {
-      if (attribute.value > 12) attribute.value = 12; 
-    });
-    
-    $.each(data.data.disciplines, (discipline) => {
-      if (discipline.value > 5) discipline.value = 5; 
-    });
-
-    // Checks if shields is larger than its max, if so, set to max. 
-    if (data.data.stress.value > data.data.stress.max) {
-      data.data.stress.value = data.data.stress.max;
-    }
-    if (data.data.determination.value > 3) {
-      data.data.determination.value = 3;
-    }
-    if (data.data.reputation.value > 20) {
-      data.data.reputation.value = 20;
-    }
-    
-    // Ensure attribute and discipline values aren't lower than 4.
-    $.each(data.data.attribute, (attribute) => {
-      if (attribute.value < 7) attribute.value = 7; 
-    });
-    
-    $.each(data.data.disciplines, (discipline) => {
-      if (discipline.value < 0) discipline.value = 0; 
-    });
-
-    // Checks if any values are below their theoretical minimum, if so - set it to the very minimum.
-    if (data.data.stress.value < 0) {
-      data.data.stress.value = 0;
-    }
-    if (data.data.determination.value < 0) {
-      data.data.determination.value = 0;
-    }
-    if (data.data.reputation < 0) {
-      data.data.reputation = 0;
-    }
 
     // Checks if items for this actor have default images. Something with Foundry 0.7.9 broke this functionality operating normally.
     // Stopgap until a better solution can be found.
@@ -84,8 +46,8 @@ export class STACharacterSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
         
-    // Opens the class STASharedActorFunctions for access at various stages.
-    const staActor = new STASharedActorFunctions();
+    // Opens the class DuneSharedActorFunctions for access at various stages.
+    const staActor = new DuneSharedActorFunctions();
 
     // If the player has limited access to the actor, there is nothing to see here. Return.
     if ( !game.user.isGM && this.actor.limited) return;
@@ -93,7 +55,7 @@ export class STACharacterSheet extends ActorSheet {
     // We use i alot in for loops. Best to assign it now for use later in multiple places.
     let i;
 
-    // Here we are checking if there is armor equipped. 
+    // Here we are checking if there is armor equipped.
     // The player can only have one armor. As such, we will use this later.
     let armorNumber = 0;
     let stressTrackMax = 0;
@@ -119,7 +81,7 @@ export class STACharacterSheet extends ActorSheet {
       html.find('#bar-determination-renderer')[0].appendChild(detDiv);
     }
 
-    // This creates a dynamic Stress tracker. It polls for the value of the fitness attribute, security discipline, and checks for Resolute talent. 
+    // This creates a dynamic Stress tracker. It polls for the value of the fitness attribute, security discipline, and checks for Resolute talent.
     // With the total value, creates a new div for each and places it under a child called "bar-stress-renderer".
     function stressTrackUpdate() {
       stressTrackMax = parseInt(html.find('#fitness')[0].value) + parseInt(html.find('#security')[0].value);
@@ -142,9 +104,9 @@ export class STACharacterSheet extends ActorSheet {
     }
     stressTrackUpdate();
 
-    // This creates a dynamic Reputation tracker. For this it uses a max value of 30. This can be configured here. 
+    // This creates a dynamic Reputation tracker. For this it uses a max value of 30. This can be configured here.
     // It creates a new div for each and places it under a child called "bar-rep-renderer"
-    const repPointsMax = game.settings.get('sta', 'maxNumberOfReputation');
+    const repPointsMax = game.settings.get('dune', 'maxNumberOfReputation');
     for (let i = 1; i <= repPointsMax; i++) {
       const repDiv = document.createElement('DIV');
       repDiv.className = 'box';
@@ -154,9 +116,9 @@ export class STACharacterSheet extends ActorSheet {
       html.find('#bar-rep-renderer')[0].appendChild(repDiv);
     }
 
-    // Fires the function staRenderTracks as soon as the parameters exist to do so.
-    // staActor.staRenderTracks(html, stressTrackMax, determinationPointsMax, repPointsMax);
-    staActor.staRenderTracks(html, stressTrackMax,
+    // Fires the function duneRenderTracks as soon as the parameters exist to do so.
+    // staActor.duneRenderTracks(html, stressTrackMax, determinationPointsMax, repPointsMax);
+    staActor.duneRenderTracks(html, stressTrackMax,
       determinationPointsMax, repPointsMax);
 
     // This allows for each item-edit image to link open an item sheet. This uses Simple Worldbuilding System Code.

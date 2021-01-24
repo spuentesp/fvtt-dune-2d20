@@ -2,7 +2,7 @@ export class STAFocusSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'item', 'focus'],
+      classes: ['dune', 'sheet', 'item', 'focus'],
       width: 500,
       height: 200,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]

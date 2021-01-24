@@ -5,8 +5,8 @@
 	"version": "0.0.1-conversion.0",
 	"minimumCoreVersion": "0.7.7",
 	"compatibleCoreVersion": "0.7.9",
-	"templateVersion": 1,
 	"author": "spuentesp",
+	"system": "2d20",
 	"esmodules": ["module/dune.js"],
 	"styles": ["dune.css"],
 	"packs": [],
@@ -15,11 +15,6 @@
 			"lang": "en",
 			"name": "English",
 			"path": "lang/en.json"
-		},
-		{
-			"lang": "de",
-			"name": "German",
-			"path": "lang/de.json"
 		}
 	],
 	"gridDistance": 5,

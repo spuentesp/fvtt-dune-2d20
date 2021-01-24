@@ -1,4 +1,4 @@
-export class STARollDialog {
+export class Dune2d20RollDialog {
   static async create(isAttribute, defaultValue) {
     let html = '';
     if (isAttribute) {

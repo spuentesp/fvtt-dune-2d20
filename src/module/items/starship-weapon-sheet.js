@@ -1,8 +1,8 @@
-export class STAStarshipWeaponSheet extends ItemSheet {
+export class DuneStarshipWeaponSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'item', 'starshipweapon'],
+      classes: ['dune', 'sheet', 'item', 'starshipweapon'],
       width: 565,
       height: 400,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]

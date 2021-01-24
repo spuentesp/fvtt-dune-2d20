@@ -12,27 +12,37 @@
             "traits": {
                 "battle": {
                     "label": "sta.actor.character.attribute.battle",
+                    "statement": "",
                     "value": 4,
+                    "max": 10,
                     "selected": true
                 },
                 "communicate": {
                     "label": "sta.actor.character.attribute.communicate",
+                    "statement": "",
                     "value": 4,
+                    "max": 10,
                     "selected": false
                 },
                 "discipline": {
                     "label": "sta.actor.character.attribute.discipline",
+                    "statement": "",
                     "value": 4,
+                    "max": 10,
                     "selected": false
                 },
                 "move": {
                     "label": "sta.actor.character.attribute.move",
+                    "statement": "",
                     "value": 4,
+                    "max": 10,
                     "selected": false
                 },
                 "understand": {
                     "label": "sta.actor.character.attribute.understand",
+                    "statement": "",
                     "value": 4,
+                    "max": 10,
                     "selected": false
                 }
             },
@@ -46,32 +56,44 @@
                 "duty": {
                     "label": "sta.actor.character.discipline.duty",
                     "value": 4,
-                    "selected": true
+                    "max": 10,
+                    "selected": true,
+                    "focus": ""
                 },
                 "faith": {
                     "label": "sta.actor.character.discipline.faith",
                     "value": 4,
-                    "selected": false
+                    "max": 10,
+                    "selected": false,
+                    "focus": ""
                 },
                 "justice": {
                     "label": "sta.actor.character.discipline.justice",
                     "value": 4,
-                    "selected": false
+                    "max": 10,
+                    "selected": false,
+                    "focus": ""
                 },
                 "power": {
                     "label": "sta.actor.character.discipline.power",
                     "value": 4,
-                    "selected": false
+                    "max": 10,
+                    "selected": false,
+                    "focus": ""
                 },
                 "truth": {
                     "label": "sta.actor.character.discipline.truth",
                     "value": 4,
-                    "selected": false
+                    "max": 10,
+                    "selected": false,
+                    "focus": ""
                 }
             },
             "house": "",
             "role": "",
             "faction": "",
+            "ambition": "",
+            "personalitytraits": "",
             "reputation": 0,
             "stress": {
                 "value": 0
@@ -79,70 +101,26 @@
         },
         "house": {
             "templates": ["common"],
-            "assignment": "",
-            "traits": {
-                "battle": {
-                    "label": "sta.actor.character.attribute.battle",
-                    "value": 4,
-                    "selected": true
-                },
-                "communicate": {
-                    "label": "sta.actor.character.attribute.communicate",
-                    "value": 4,
-                    "selected": false
-                },
-                "discipline": {
-                    "label": "sta.actor.character.attribute.discipline",
-                    "value": 4,
-                    "selected": false
-                },
-                "move": {
-                    "label": "sta.actor.character.attribute.move",
-                    "value": 4,
-                    "selected": false
-                },
-                "understand": {
-                    "label": "sta.actor.character.attribute.understand",
-                    "value": 4,
-                    "selected": false
-                }
-            },
-            "determination": {
-                "value": 0
-            },
-            "advancementPoints": {
-                "value": 0
-            },
-            "drives": {
-                "duty": {
-                    "label": "sta.actor.character.discipline.duty",
-                    "value": 4,
-                    "selected": true
-                },
-                "faith": {
-                    "label": "sta.actor.character.discipline.faith",
-                    "value": 4,
-                    "selected": false
-                },
-                "justice": {
-                    "label": "sta.actor.character.discipline.justice",
-                    "value": 4,
-                    "selected": false
-                },
-                "power": {
-                    "label": "sta.actor.character.discipline.power",
-                    "value": 4,
-                    "selected": false
-                },
-                "truth": {
-                    "label": "sta.actor.character.discipline.truth",
-                    "value": 4,
-                    "selected": false
-                }
-            },
-            "house": "",
-            "role": "",
+            "homeworld": "",
+            "houseType": "",
+            "traits": "",
             "faction": "",
+            "domains": "",
+            "roles": {
+                "ruler": "",
+                "consort": "",
+                "heir": "",
+                "advisor": "",
+                "physician": "",
+                "councillor": "",
+                "envoy": "",
+                "marshall": "",
+                "scholar": "",
+                "spymaster": "",
+                "swordmaster":"",
+                "treasurer":"",
+                "warmaster":""
+            },
             "reputation": 0,
             "stress": {
                 "value": 0
@@ -159,25 +137,25 @@
         }
     },
     "Item": {
-        "types": ["item", "focus", "value", "characterweapon", "starshipweapon", "armor", "talent", "milestone", "injury", "smallcraftcontainer"],
+        "types": ["item", "focus", "value", "characterweapon", "armor", "talent", "asset", "injury"],
         "templates": {
             "common": {
                 "description": ""
             }
         },
         "item": {
-            "templates": ["common"],
+            "templates": ["character"],
             "quantity": 1
         },
         "focus": {
-            "templates": ["common"]
+            "templates": ["character"]
         },
         "value": {
-            "templates": ["common"],
+            "templates": ["character"],
             "used": false
         },
         "characterweapon": {
-            "templates": ["common"],
+            "templates": ["character"],
             "damage": 0,
             "range": "",
             "hands": 1,
@@ -198,33 +176,15 @@
                 "viciousx": 0
             }
         },
-        "starshipweapon": {
-            "templates": ["common"],
-            "damage": 0,
-            "range": "",
-            "qualities": {
-                "area": false,
-                "spread": false,
-                "dampening": false,
-                "calibration": false,
-                "devastating": false,
-                "highyield": false,
-                "persistentx": 0,
-                "piercingx": 0,
-                "viciousx": 0,
-                "hiddenx": 0,
-                "versatilex": 0
-            }
-        },
         "armor": {
-            "templates": ["common"],
+            "templates": ["character"],
             "protection": 0,
             "equipped": true,
             "opportunity": 0,
             "escalation": 0
         },
         "talent": {
-            "templates": ["common"],
+            "templates": ["character"],
             "talenttype": {
               "typeenum": "",
               "description":"",
@@ -232,19 +192,29 @@
             }
         },
         "assets": {
-            "templates": ["common"],
+            "templates": ["character"],
             "assettype": {
                 "typeenum": "",
                 "description":"",
+                "value": 0,
+                "max": 4,
                 "minimum":0
             }
         },
         "injury": {
             "templates": ["common"]
         },
-        "smallcraftcontainer": {
-            "templates": ["common"],
-            "quantity": 1
+        "enemy": {
+            "templates": ["house"],
+            "assettype": {
+                "typeenum": "",
+                "minimum":0,
+                "name": "",
+                "type": "",
+                "hatred": "",
+                "reason": "",
+                "notes": ""
+            }
         }
     }
 }

@@ -2,7 +2,7 @@ export class STASmallcraftContainerSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['sta', 'sheet', 'item'],
+      classes: ['dune', 'sheet', 'item'],
       width: 680,
       height: 320,
       tabs: [{navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'description'}]
